@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Header with Background</title>
     <style>
         /* Full page styling */
         * {
@@ -28,7 +27,7 @@
             align-items: center; /* Center vertically */
         }
 
-        #skib {
+        #title {
             font-size: 70px;
             text-align: center;
             color: brown;
@@ -49,7 +48,7 @@
         }
 
         /* Styling for the input */
-        #balls {
+        #search {
             box-shadow: inset #abacaf 0 0 0 2px;
             border: 0;
             background: rgba(0, 0, 0, 0);
@@ -66,11 +65,11 @@
             transition: box-shadow 1s ease, background 0.3s ease;
         }
 
-        #balls:hover {
+        #search:hover {
             box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
         }
 
-        #balls:focus {
+        #search:focus {
             background: #fff;
             outline: 0;
             box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
@@ -149,21 +148,21 @@
     <div id="side-menu" class="side-menu">
         <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
         <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
+        <a href="#AI">About</a>
+        <a href="#trending">Services</a>
         <a href="#contact">Contact</a>
     </div>
 
     <!-- Top section -->
     <div class="top-half">
-        <header id="skib">SIGMA NEWS</header>
+        <header id="title">SIGMA NEWS</header>
     </div>
 
     <!-- Bottom section -->
     <div class="bottom-half">
         <h1 id="desc">Description yada yada yada yabadabadoo</h1>
         <div class="input-container">
-            <input id="balls" type="text" placeholder="Type here...">
+            <input id="search" type="text" placeholder="Type here...">
         </div>
     </div>
 
