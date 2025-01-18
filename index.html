@@ -145,7 +145,7 @@
             transform: translateY(25px);
         }
 
-        /* Styling for configurable text boxes (headers and summaries) */
+        /* Styling for conjoined text boxes (headers and summaries) */
         .text-box-container {
             display: flex;
             justify-content: center;
@@ -154,36 +154,82 @@
             margin-top: 30px;
         }
 
-        .configurable-header {
-            width: 250px; /* Small size for header boxes */
-            height: 80px; /* Height of header box */
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
+       /* Styling for conjoined text boxes (headers and summaries) */
+.text-box-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow boxes to wrap if necessary */
+    margin-top: 30px;
+    justify-content: space-around; /* Distribute boxes evenly */
+}
+
+/* Styling for conjoined text boxes (headers and summaries) */
+.text-box-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;  /* Increase gap for spacing */
+    flex-wrap: wrap; /* Allow boxes to wrap if necessary */
+    margin-top: 30px;
+    justify-content: space-around; /* Distribute boxes evenly */
+}
+
+/* Styling for header boxes */
+.conjoined-header {
+    width: 180px; /* Smaller size for fitting side by side */
+    height: 80px;
+    border: 2px solid #333; /* Dark border to make it visible */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;  /* Center text in box */
+}
+
+/* Styling for summary boxes */
+.conjoined-summary {
+    width: 180px; /* Smaller size for fitting side by side */
+    height: 150px;
+    border: 2px solid #333; /* Dark border to make it visible */
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: center;  /* Center text in box */
+}
+
+
+.conjoined-header:hover{
+    background-color: #f0f0f0;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.2);
+    transform: translate(-2px, -2px);
+    cursor: pointer;
+}
+
+        /* Hover and Focus effects */
+        .conjoined-box:hover {
+            box-shadow: 4px 4px 0 #000;
+            transform: translate(-4px, -4px);
         }
 
-        .configurable-summary {
-            width: 250px; /* Larger size for summary boxes */
-            height: 200px; /* Height of summary box */
-            border: 2px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            font-size: 16px;
-            font-family: Arial, sans-serif;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-            background-color: #f9f9f9;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #333;
+        .conjoined-box:focus-visible {
+            outline-offset: 1px;
         }
 
     </style>
@@ -214,17 +260,20 @@
         </div>
         <h1 id="rtitle">Recent Topics</h1>
 
-        <!-- Text boxes for mini news articles (Headers and Summaries) -->
+        <!-- Text boxes for mini news articles (Conjoined Header and Summary) -->
         <div class="text-box-container">
-            <!-- Non-interactive boxes for headers -->
-            <div class="configurable-header">Florida Man Finds Garden of Eden, Turns it into a Parking Lot</div>
-            <div class="configurable-header">The Jonkler Strikes Again</div>
-            <div class="configurable-header">Why are Oranges Orange? Aerospace Engineers say that...</div>
-            
-            <!-- Non-interactive boxes for summaries -->
-            <div class="configurable-summary">Summary 1</div>
-            <div class="configurable-summary">Summary 2</div>
-            <div class="configurable-summary">Summary 3</div>
+            <div class="conjoined-box">
+                <div class="conjoined-header"><b>Florida Man Finds Garden of Eden, Turns it into a Parking Lot</b></div>
+                <div class="conjoined-summary">Summary: Florida Man discovers a hidden Eden-like garden and decides to convert it into a 4 way intersection with a Chili's and Walmart. Controversy erupts...</div>
+            </div>
+            <div class="conjoined-box">
+                <div class="conjoined-header"><b>The Jonkler Strikes Again</b></div>
+                <div class="conjoined-summary">A notorious villain returns to wreak havoc in the streets, leaving everyone questioning his motives and next move.</div>
+            </div>
+            <div class="conjoined-box">
+                <div class="conjoined-header"><b>Why are Oranges Orange? Aerospace Engineers say that...</b></div>
+                <div class="conjoined-summary">New findings by aerospace engineers explore the fascinating science behind why oranges are orange, hinting at unexpected discoveries...</div>
+            </div>
         </div>
     </div>
 
