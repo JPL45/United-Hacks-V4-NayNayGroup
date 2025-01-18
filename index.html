@@ -138,6 +138,54 @@
         #open-menu-btn:hover {
             background-color: #575757;
         }
+
+        #rtitle{
+            text-align: center;
+            font-family: cursive;
+            transform: translateY(25px);
+        }
+
+        /* Styling for configurable text boxes (headers and summaries) */
+        .text-box-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .configurable-header {
+            width: 250px; /* Small size for header boxes */
+            height: 80px; /* Height of header box */
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .configurable-summary {
+            width: 250px; /* Larger size for summary boxes */
+            height: 200px; /* Height of summary box */
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            background-color: #f9f9f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
     </style>
 </head>
 <body>
@@ -148,8 +196,8 @@
     <div id="side-menu" class="side-menu">
         <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
         <a href="#home">Home</a>
-        <a href="#AI">About</a>
-        <a href="#trending">Services</a>
+        <a href="#AI">AI</a>
+        <a href="#Articles">Articles</a>
         <a href="#contact">Contact</a>
     </div>
 
@@ -163,6 +211,20 @@
         <h1 id="desc">Description yada yada yada yabadabadoo</h1>
         <div class="input-container">
             <input id="search" type="text" placeholder="Type here...">
+        </div>
+        <h1 id="rtitle">Recent Topics</h1>
+
+        <!-- Text boxes for mini news articles (Headers and Summaries) -->
+        <div class="text-box-container">
+            <!-- Non-interactive boxes for headers -->
+            <div class="configurable-header">Headline 1</div>
+            <div class="configurable-header">Headline 2</div>
+            <div class="configurable-header">Headline 3</div>
+            
+            <!-- Non-interactive boxes for summaries -->
+            <div class="configurable-summary">Summary 1</div>
+            <div class="configurable-summary">Summary 2</div>
+            <div class="configurable-summary">Summary 3</div>
         </div>
     </div>
 
