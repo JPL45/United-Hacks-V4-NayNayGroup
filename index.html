@@ -263,16 +263,16 @@
         <!-- Text boxes for mini news articles (Conjoined Header and Summary) -->
         <div class="text-box-container">
             <div class="conjoined-box">
-                <div class="conjoined-header"><b>Florida Man Finds Garden of Eden, Turns it into a Parking Lot</b></div>
-                <div class="conjoined-summary">Summary: Florida Man discovers a hidden Eden-like garden and decides to convert it into a 4 way intersection with a Chili's and Walmart. Controversy erupts...</div>
+                <div class="conjoined-header" id="hed1"><b>Florida Man Finds Garden of Eden, Turns it into a Parking Lot</b></div>
+                <div class="conjoined-summary" id="sum1">Summary: Florida Man discovers a hidden Eden-like garden and decides to convert it into a 4 way intersection with a Chili's and Walmart. Controversy erupts...</div>
             </div>
             <div class="conjoined-box">
-                <div class="conjoined-header"><b>The Jonkler Strikes Again</b></div>
-                <div class="conjoined-summary">A notorious villain returns to wreak havoc in the streets, leaving everyone questioning his motives and next move.</div>
+                <div class="conjoined-header" id="hed2"><b>The Jonkler Strikes Again</b></div>
+                <div class="conjoined-summary" id="sum2">A notorious villain returns to wreak havoc in the streets, leaving everyone questioning his motives and next move.</div>
             </div>
             <div class="conjoined-box">
-                <div class="conjoined-header"><b>Why are Oranges Orange? Aerospace Engineers say that...</b></div>
-                <div class="conjoined-summary">New findings by aerospace engineers explore the fascinating science behind why oranges are orange, hinting at unexpected discoveries...</div>
+                <div class="conjoined-header" id="hed3"><b>Why are Oranges Orange? Aerospace Engineers say that...</b></div>
+                <div class="conjoined-summary" id="sum3">New findings by aerospace engineers explore the fascinating science behind why oranges are orange, hinting at unexpected discoveries...</div>
             </div>
         </div>
     </div>
@@ -287,6 +287,27 @@
         function closeMenu() {
             document.getElementById("side-menu").style.width = "0";
         }
+    </script>
+      <script>
+        // Define variables for all header and summary content
+        var hed1 = "Florida Man Finds Garden of Eden, Turns it into a Parking Lot";
+        var sum1 = "Summary: Florida Man discovers a hidden Eden-like garden and decides to convert it into a 4 way intersection with a Chili's and Walmart. Controversy erupts...";
+
+        var hed2 = "The Jonkler Strikes Again";
+        var sum2 = "A notorious villain returns to wreak havoc in the streets, leaving everyone questioning his motives and next move.";
+
+        var hed3 = "Why are Oranges Orange? Aerospace Engineers say that...";
+        var sum3 = "New findings by aerospace engineers explore the fascinating science behind why oranges are orange, hinting at unexpected discoveries...";
+
+        // Set the text content of the headers and summaries dynamically
+        document.getElementById("hed1").textContent = hed1;
+        document.getElementById("sum1").textContent = sum1;
+
+        document.getElementById("hed2").textContent = hed2;
+        document.getElementById("sum2").textContent = sum2;
+
+        document.getElementById("hed3").textContent = hed3;
+        document.getElementById("sum3").textContent = sum3;
     </script>
 </body>
 </html>
