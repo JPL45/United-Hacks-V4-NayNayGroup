@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Header with Background</title>
+    <style>
+        /* Full page styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Top half with background */
+        .top-half {
+            height: 30vh; /* Top half height */
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVXunEospD2qVjh7-57s8ivJvDAIsgafvHyQ&s");
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex; /* Enable flexbox */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+        }
+
+        #skib {
+            font-size: 70px;
+            text-align: center;
+            color: brown;
+        }
+
+        /* Bottom half for info */
+        .bottom-half {
+            height: 70vh;
+            background-color: rgb(34, 33, 33);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        #desc {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for the input */
+        #balls {
+            box-shadow: inset #abacaf 0 0 0 2px;
+            border: 0;
+            background: rgba(0, 0, 0, 0);
+            appearance: none;
+            width: 500px;
+            position: relative;
+            border-radius: 3px;
+            padding: 9px 12px;
+            line-height: 1.4;
+            color: rgb(0, 0, 0);
+            font-size: 16px;
+            font-weight: 400;
+            height: 40px;
+            transition: box-shadow 1s ease, background 0.3s ease;
+        }
+
+        #balls:hover {
+            box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 2px;
+        }
+
+        #balls:focus {
+            background: #fff;
+            outline: 0;
+            box-shadow: 0 0 0 0 #fff inset, #1de9b6 0 0 0 3px;
+        }
+
+        .input-container {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Side navigation menu styling */
+        .side-menu {
+            height: 100%; /* Full height */
+            width: 0; /* Initially hidden */
+            position: fixed; /* Stay in place */
+            top: 0;
+            left: 0;
+            background-color: #111; /* Black background */
+            overflow-x: hidden; /* Disable horizontal scroll */
+            transition: 0.5s; /* Smooth slide-in transition */
+            padding-top: 60px;
+            z-index: 1000;
+        }
+
+        .side-menu a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .side-menu a:hover {
+            color: #f1f1f1;
+        }
+
+        .side-menu .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            font-size: 36px;
+            color: #818181;
+        }
+
+        .side-menu .close-btn:hover {
+            color: #f1f1f1;
+        }
+
+        /* Open button for side menu */
+        #open-menu-btn {
+            font-size: 20px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #111;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            position: absolute; /* Position it over the top-half */
+            top: 10px; /* Distance from the top */
+            left: 10px; /* Distance from the left */
+            z-index: 2; /* Place it above the background image */
+        }
+
+        #open-menu-btn:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <!-- Open button for side menu -->
+    <button id="open-menu-btn" onclick="openMenu()">☰ Open Menu</button>
+
+    <!-- Side navigation menu -->
+    <div id="side-menu" class="side-menu">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeMenu()">&times;</a>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Top section -->
+    <div class="top-half">
+        <header id="skib">SIGMA NEWS</header>
+    </div>
+
+    <!-- Bottom section -->
+    <div class="bottom-half">
+        <h1 id="desc">Description yada yada yada yabadabadoo</h1>
+        <div class="input-container">
+            <input id="balls" type="text" placeholder="Type here...">
+        </div>
+    </div>
+
+    <script>
+        // Open menu function
+        function openMenu() {
+            document.getElementById("side-menu").style.width = "250px";
+        }
+
+        // Close menu function
+        function closeMenu() {
+            document.getElementById("side-menu").style.width = "0";
+        }
+    </script>
+</body>
+</html>
