@@ -2,6 +2,10 @@ from datasets import load_dataset
 from transformers import AutoModelForSeq2SeqLM
 from transformers import AutoTokenizer
 from transformers import GenerationConfig
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning, message="resource_tracker: There appear to be .* leaked semaphore objects")
+from multiprocessing import Queue
+queue = Queue(maxsize=50)  # Adjust the size as needed
 
 
 huggingface_dataset_name = "knkarthick/dialogsum"
@@ -36,7 +40,6 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
  # Load the tokenizer
 tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=True)
-
 
 
 # Define a test sentence
