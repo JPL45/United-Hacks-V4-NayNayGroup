@@ -176,48 +176,49 @@ What was going on?
     
     
     def make_prompt(full_examples_indices, index_to_summarize):
-    """
-    Construct a prompt for one-shot or few-shot inference.
+    
+        #Construct a prompt for one-shot or few-shot inference.
 
-    Parameters
-    ----------
-    full_examples_indices : list
-        A list containing indices for complete dialogues to be included in the prompt. These dialogues serve as examples 
-        for the model to learn from (for one-shot or few-shot inference).
-    index_to_summarize : int
-        The index for the dialogue that the model is expected to give a summary for.
+        #Parameters
+        #----------
+        #full_examples_indices : list
+        #A list containing indices for complete dialogues to be included in the prompt. These dialogues serve as examples 
+        #for the model to learn from (for one-shot or few-shot inference).
+        #index_to_summarize : int
+        #The index for the dialogue that the model is expected to give a summary for.
 
-    Returns
-    -------
-    str
-        A prompt string that is constructed as per the given parameters - full dialogues examples followed by a dialogue 
-        that needs to be summarized.
-    """
-    prompt = ''
+        #Returns
+        #-------
+        #str
+        #A prompt string that is constructed as per the given parameters - full dialogues examples followed by a dialogue 
+        #that needs to be summarized.
+        
+
+        prompt = ''
 
     # Go through each index in the full examples list
-    for index in full_examples_indices:
-        dialogue = dataset['test'][index]['dialogue']
-        summary = dataset['test'][index]['summary']
+        for index in full_examples_indices:
+            dialogue = dataset['test'][index]['dialogue']
+            summary = dataset['test'][index]['summary']
 
         # Add each dialogue and its summary to the prompt string, followed by a stop sequence. The stop sequence 
         # '{summary}\n\n\n' is essential for FLAN-T5 model. Other models may have their own different stop sequence.
-        prompt += f"""
-Dialogue:
+            prompt += f"""
+                Dialogue:
 
-{dialogue}
+                {dialogue}
 
-What was going on?
-{summary}
+                What was going on?
+                {summary}
 
 
-"""
+                """
 
     # Now add the dialogue that needs to be summarized by the model
-    dialogue_to_summarize = dataset['test'][index_to_summarize]['dialogue']
+        dialogue_to_summarize = dataset['test'][index_to_summarize]['dialogue']
 
     # Append this new dialogue to the prompt string
-    prompt += f"""
+        prompt += f"""
 Dialogue:
 
 {dialogue_to_summarize}
@@ -226,7 +227,7 @@ What was going on?
 """
 
     # Return the constructed prompt
-    return prompt
+        return prompt
 
 
 
