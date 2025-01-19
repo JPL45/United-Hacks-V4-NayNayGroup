@@ -247,7 +247,10 @@
     <div class="bottom-half">
         <h1 id="desc">Description yada yada yada yabadabadoo</h1>
         <div class="input-container">
-            <input id="search" type="text" placeholder="Type here...">
+            <form id="searchForm" onsubmit="handleFormSubmit(event)">
+                <input id="search" type="text" placeholder="Type here..." name="query">
+                <button type="submit" style="display: none;">Submit</button>
+            </form>
         </div>
         <h1 id="rtitle">Recent Topics</h1>
 
@@ -299,6 +302,16 @@
 
         document.getElementById("hed3").textContent = hed3;
         document.getElementById("sum3").textContent = sum3;
+    </script>
+    <script>
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent default form submission behavior
+            const userInput = document.getElementById("search").value; // Get the input value
+            console.log("User input:", userInput); // Log it or process it
+            // Perform any desired action with userInput here
+            alert(`You entered: ${userInput}`);
+        }
     </script>
 </body>
 </html>
